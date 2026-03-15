@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.PrimaryController" prefHeight="720.0" prefWidth="1280.0">
+    
+    <MenuBar>
+        <Menu text="Browser">
+            <MenuItem text="Beenden" onAction="#exitApp"/>
+        </Menu>
+        <Menu text="Designs">
+            <MenuItem text="Windows Klassisch (Retro)" onAction="#loadRetro"/>
+            <MenuItem text="Modern Dark" onAction="#loadDark"/>
+            <MenuItem text="Standard Hell" onAction="#loadModern"/>
+        </Menu>
+    </MenuBar>
+    
+    <HBox spacing="6" alignment="CENTER_LEFT" styleClass="retro-bar">
+        <padding>
+            <Insets top="6" right="6" bottom="6" left="6"/>
+        </padding>
+        
+        <Button text="&lt;" onAction="#goBack" style="-fx-font-weight: bold;"/>
+        <Button text="&gt;" onAction="#goForward" style="-fx-font-weight: bold;"/>
+        <Button text="⟳" onAction="#reload"/>
+        <Button text="+" onAction="#createNewTab" style="-fx-font-weight: bold; -fx-text-fill: green;"/>
+        
+        <ChoiceBox fx:id="searchDropdown" prefWidth="100" />
+        
+        <TextField fx:id="addressBar" HBox.hgrow="ALWAYS" onAction="#loadAction" promptText="URL oder Suchbegriff..."/>
+        
+        <Button text="Los!" onAction="#loadAction" style="-fx-base: #0078d7; -fx-text-fill: white;"/>
+
+        <Button text="DevTools" onAction="#openDevTools" style="-fx-base: #444; -fx-text-fill: white;"/>
+    </HBox>
+    
+    <StackPane VBox.vgrow="ALWAYS">
+        
+        <TabPane fx:id="tabPane" tabClosingPolicy="ALL_TABS" />
+
+        <VBox fx:id="githubPanel" maxWidth="450.0" prefWidth="450.0" visible="false" managed="false" 
+              StackPane.alignment="TOP_RIGHT" 
+              style="-fx-background-color: #f6f8fa; -fx-border-color: #d0d7de; -fx-border-width: 0 0 0 2; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);">
+            
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #24292f; -fx-padding: 8;">
+                <Label text="GitHub QuickView" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="X" onAction="#toggleGitHub" style="-fx-background-color: #cf222e; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+            
+            <WebView fx:id="githubWebView" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <Button text="GitHub" onAction="#toggleGitHub" 
+                StackPane.alignment="BOTTOM_RIGHT" 
+                style="-fx-background-radius: 20; -fx-base: #24292f; -fx-text-fill: white; -fx-padding: 8 15;">
+            <StackPane.margin>
+                <Insets bottom="15" right="15"/>
+            </StackPane.margin>
+        </Button>
+        
+    </StackPane>
+</VBox>

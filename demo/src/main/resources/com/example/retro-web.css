@@ -1,0 +1,59 @@
+/* Der klassische graue Hintergrund */
+html, body {
+    background-color: #c0c0c0 !important;
+    color: #000000 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* NUR große Container bekommen Kanten, nicht jedes kleine Div */
+main, article, header, nav, table, blockquote {
+    background-color: #c0c0c0 !important;
+    border: 2px solid !important;
+    border-color: #ffffff #808080 #808080 #ffffff !important;
+    padding: 10px !important;
+    margin: 5px !important;
+}
+
+/* Textelemente ohne eigenen Hintergrund (verhindert Kästen um Zeilen) */
+p, span, li, b, i, h1, h2, h3, h4, h5, h6 {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Die typischen blauen Retro-Links */
+a {
+    color: #0000ee !important;
+    text-decoration: underline !important;
+}
+
+/* Buttons (hier sind Kanten gewollt!) */
+button, input[type="submit"] {
+    background-color: #c0c0c0 !important;
+    border: 2px solid !important;
+    border-color: #ffffff #808080 #808080 #ffffff !important;
+    padding: 2px 10px !important;
+    font-family: "Arial", sans-serif !important;
+}
+
+/* Gezielt gegen die moderne Google-Suchleiste und andere runde Felder */
+input, textarea, [role="combobox"], [role="searchbox"] {
+    border-radius: 0 !important; /* Macht ALLES eckig */
+    background-color: #ffffff !important; /* Weiß lassen für den Kontrast, oder #c0c0c0 für Voll-Retro */
+    border: 2px solid !important;
+    border-color: #808080 #ffffff #ffffff #808080 !important; /* Invertierter Bevel: sieht eingedrückt aus */
+    box-shadow: none !important; /* Entfernt den modernen Schatten bei Google */
+}
+
+/* Entfernt die bunten Google-Icons oder zusätzliche moderne Layer */
+div[jsname], div[jscontroller] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Speziell für die Google-Startseite: Den großen Suchcontainer eckig machen */
+.RNNXgb, .zS3PZ, .SDk7fe {
+    border-radius: 0 !important;
+    border: 1px solid #808080 !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+}

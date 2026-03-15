@@ -1,0 +1,24 @@
+.root {
+    -fx-base: #c0c0c0; /* Das typische Grau */
+    -fx-control-inner-background: white;
+}
+
+.button {
+    -fx-background-radius: 0;
+    -fx-border-color: white #808080 #808080 white;
+    -fx-border-width: 2;
+    -fx-background-color: #c0c0c0;
+    -fx-text-fill: black;
+    -fx-font-family: "MS Sans Serif", "Tahoma", sans-serif;
+}
+
+.text-field {
+    -fx-background-radius: 0;
+    -fx-border-color: #808080 white white #808080;
+    -fx-border-width: 2;
+}
+
+.retro-bar {
+    -fx-background-color: #c0c0c0;
+    -fx-border-color: white transparent transparent transparent;
+}

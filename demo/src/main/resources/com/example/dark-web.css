@@ -1,0 +1,15 @@
+/* 1. Die gesamte Seite invertieren */
+html {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* 2. Bilder, Videos und Avatare wieder zurück-invertieren, 
+      damit Gesichter nicht gruselig aussehen */
+img, video, iframe, canvas, [style*="background-image"] {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* 3. Hintergrundfarbe für den Browser-Rahmen erzwingen */
+html, body {
+    background-color: #ffffff !important; 
+}
